@@ -1,0 +1,46 @@
+:root {
+    --background-color: #333;
+    --type-text-color: #000;
+    --header-text-color: #FBFBFB;
+}
+
+body {
+    background-color: var(--background-color);
+    margin: auto;
+    max-width: 100rem;
+}
+
+h3 {
+    text-align: center;
+    margin-bottom: 4rem;
+    color: var(--header-text-color);
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    grid-auto-rows: minmax(4rem, auto);
+}
+
+.grid-item {
+    grid-column: 1/4;
+}
+
+.type {
+    border-radius: 4%;
+    color: var(--type-text-color);
+    text-align: center;
+    padding: 1rem 5rem;
+    width: 15rem;
+    cursor: pointer;
+    font-size: 2rem;
+}
+
+.type-pool {
+    margin: 2rem 0rem;
+}
+
+.selected-types {
+    margin: 3rem 0rem;
+}

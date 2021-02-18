@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokemon Strengths and Weaknesses</title>
+    <link rel="stylesheet" href="sakura.css" type="text/css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+    <body>
+        <div id="app">
+            <h3>Types</h3>
+            <div class="grid-container type-pool">
+                <div v-for="type in types" :key="type.title">
+                    <div @click="addType(type.title)" class="type" :style="{'background-color':type.color}">
+                        {{type.title}}
+                    </div>
+                </div>
+            </div>
+            <br>
+            <h3 v-if="selected.length">Selected Types</h3>
+            <div class="grid-container selected-types">
+                <div v-for="item in selected" :key="item.title">
+                    <div @click="removeType(item.title)" class="type" :style="{'background-color':item.color}">
+                        {{item.title}}
+                    </div>
+                </div>
+            </div>
+            <br>
+            <h3 v-if="weaknesses.length">Weaknesses</h3>
+            <div class="grid-container weaknesses">
+                <div v-for="weakness in weaknesses" :key="weakness.title">
+                    <div class="type" :style="{'background-color':weakness.color}">
+                        {{weakness.title}}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+        <!-- <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> -->
+        <script src="types.js"></script>
+        <script src="app.js"></script>
+    </body>
+</html>
