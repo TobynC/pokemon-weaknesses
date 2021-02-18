@@ -32,7 +32,7 @@ const normal = new PokemonType(
 );
 
 const fire = new PokemonType(
-    [types.fire, types.grass, types.ice, types.bug, types.steel, types.fairy]
+    [types.fire, types.grass, types.ice, types.bug, types.steel, types.fairy],
     [types.water, types.ground, types.rock]
 );
 
