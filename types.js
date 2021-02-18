@@ -57,7 +57,7 @@ const ice = new PokemonType(
 );
 
 const fighting = new PokemonType(
-    [types.bug, types.rock, types.dark],
+    [types.bug, types.rock, types.dark, types.ghost],
     [types.flying, types.psychic, types.fairy]
 );
 
