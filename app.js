@@ -66,6 +66,7 @@ var app = new Vue({
             weaknesses.map(x => uniqueWeaknesses.filter(a => a.title === x.title).length > 0 ? null : uniqueWeaknesses.push(x));
 
             return uniqueWeaknesses.sort((a, b) => (a.multiplier < b.multiplier) ? 1 : -1);
+            return uniqueWeaknesses.sort((a, b) => (a.multiplier < b.multiplier) ? 1 : -1);
         }
     }
 })

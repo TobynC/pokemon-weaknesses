@@ -27,7 +27,7 @@ class PokemonType {
 };
 
 const normal = new PokemonType(
-    [],
+    [types.ghost],
     [types.fighting]
 );
 
