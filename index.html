@@ -31,7 +31,13 @@
             <div class="grid-container weaknesses">
                 <div v-for="weakness in weaknesses" :key="weakness.title">
                     <div class="type" :style="{'background-color':weakness.color}">
-                        {{weakness.title}}
+                        {{weakness.title}} 
+                        <div v-if="parseInt(weakness.multiplier)*2 > 2" class="super-effective">
+                            X{{parseInt(weakness.multiplier)*2}}
+                        </div>
+                        <div v-if="parseInt(weakness.multiplier)*2 <= 2">
+                            X{{parseInt(weakness.multiplier)*2}}
+                        </div>
                     </div>
                 </div>
             </div>

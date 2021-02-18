@@ -37,7 +37,7 @@ var app = new Vue({
 
             let notEffective = [];
             let superEffective = [];
-            
+
             for(const type of this.selected) {
                 notEffective.push(...type.stats.dNotEffective);
                 superEffective.push(...type.stats.dSuperEffective);
@@ -48,6 +48,7 @@ var app = new Vue({
                 }
             }
 
+            //convert to PokemonType object
             for (const type of superEffective) {
                 const name = Object.keys(types).find(key => types[key] === type);
                 const value = this.types.filter(item => item.title.toLowerCase() === name)[0];
@@ -55,7 +56,16 @@ var app = new Vue({
                 weaknesses.push(value);
             }
 
-            return weaknesses;
+            //count duplicates to set multiplier
+            for(const weakness of weaknesses) {
+                weakness.multiplier = weaknesses.filter(w => w.title === weakness.title).length;
+            }
+
+            //remove duplicates
+            const uniqueWeaknesses = [];
+            weaknesses.map(x => uniqueWeaknesses.filter(a => a.title === x.title).length > 0 ? null : uniqueWeaknesses.push(x));
+
+            return uniqueWeaknesses.sort((a, b) => (a.multiplier < b.multiplier) ? 1 : -1);
         }
     }
 })

@@ -44,3 +44,8 @@ h3 {
 .selected-types {
     margin: 3rem 0rem;
 }
+
+.super-effective {
+    color: gold;
+    font-weight: 700;
+}
